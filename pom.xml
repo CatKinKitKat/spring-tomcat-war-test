@@ -26,6 +26,12 @@
         <skipTests>true</skipTests>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.22.2</maven.failsafe.plugin.version>
+        <tomcat.maven.plugin.version>2.2</tomcat.maven.plugin.version>
+        <tomcat.manager.url>http://localhost:8080/manager/text</tomcat.manager.url>
+        <tomcat.manager.username>tomcat</tomcat.manager.username>
+        <tomcat.manager.password>tomcat</tomcat.manager.password>
+        <tomcat.context.path>/test</tomcat.context.path>
+        <war.final.name>test</war.final.name>
     </properties>
 
     <dependencies>
@@ -182,6 +188,20 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>${tomcat.maven.plugin.version}</version>
+                <configuration>
+                    <url>${tomcat.manager.url}</url>
+                    <server>tomcat-server</server>
+                    <username>${tomcat.manager.username}</username>
+                    <password>${tomcat.manager.password}</password>
+                    <path>${tomcat.context.path}</path>
+                    <warFile>${project.build.directory}/${war.final.name}.war</warFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
