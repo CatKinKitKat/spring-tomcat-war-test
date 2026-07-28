@@ -15,7 +15,7 @@ Neste repositório, o ponto de entrada é `eu.europa.emsa.starabm.test.Applicati
 
 ## Como arranca no Tomcat
 - O Tomcat analisa o WAR, carrega o `SpringBootServletInitializer` do Spring e inicializa o ApplicationContext do Spring.
-- A aplicação corre por trás da pilha HTTP do Tomcat; os seus endpoints ficam acessíveis em `http://localhost:8080/<contexto>/...`.
+- A aplicação corre por trás da pilha HTTP do Tomcat. Os seus endpoints ficam acessíveis em `http://localhost:8080/<contexto>/...`.
 - O caminho de contexto é tipicamente o nome do WAR sem a extensão `.war` (configurável via Tomcat ou localização de cópia).
 
 ## Implantação com Tomcat via Docker

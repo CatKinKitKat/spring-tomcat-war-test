@@ -15,7 +15,7 @@ In this repo, the entrypoint is `eu.europa.emsa.starabm.test.Application`, which
 
 ## How it boots on Tomcat
 - Tomcat scans the WAR, loads Spring’s `SpringBootServletInitializer`, and initializes the Spring ApplicationContext.
-- The app runs behind Tomcat’s HTTP stack; your endpoints are accessible under `http://localhost:8080/<contextPath>/...`.
+- The app runs behind Tomcat’s HTTP stack. Your endpoints are accessible under `http://localhost:8080/<contextPath>/...`.
 - The context path is typically the WAR filename without the `.war` extension (configurable via Tomcat or copy location).
 
 ## Docker-based Tomcat deployment
